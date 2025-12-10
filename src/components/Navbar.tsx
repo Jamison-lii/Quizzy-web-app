@@ -4,10 +4,11 @@ import Link from "next/link";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "About", href: "/about" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "features", href: "/features" },
+  { label: "Course Preview", href: "/courses" },
+  { label: "How it works", href: "/how it works" },
+  { label: "About Us", href: "/about" },
+  { label: "FAQ", href: "/FAQ" },
 ];
 
 const Navbar = () => {
