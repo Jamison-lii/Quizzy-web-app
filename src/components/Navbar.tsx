@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="flex justify-between items-center h-20 px-6 shadow-md font-poppins">
+      <nav className="flex  justify-between items-center z-100 h-20 px-6 shadow-md font-poppins">
         
         {/* LEFT – LOGO */}
         <div className="font-black text-2xl">Quizzy</div>
@@ -32,7 +32,7 @@ const Navbar = () => {
         </ul>
 
         {/* RIGHT – BUTTON (DESKTOP ONLY) */}
-        <div className="hidden lg:flex h-10 px-5 bg-blue-600 text-white items-center justify-center rounded-md hover:bg-blue-700 transition cursor-pointer">
+        <div className="hidden lg:flex h-10 px-5 bg-[#5156FF] text-white items-center justify-center rounded-md hover:bg-blue-700 transition cursor-pointer">
           Download
         </div>
 
