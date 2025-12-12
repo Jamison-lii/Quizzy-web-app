@@ -3,7 +3,7 @@ import ScreenshotGrid from "./ScreenshotGrid";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F8FAFF] to-[#EEF3FF] p-56 pt-30">
+    <section className="relative overflow-hidden  p-56 pt-30">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-20">
 
         {/* LEFT SIDE */}
@@ -20,7 +20,7 @@ const Hero = () => {
           </p>
 
           <button
-            className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-medium 
+            className="bg-[#5156FF] text-white px-8 py-4 rounded-xl text-lg font-medium 
                        shadow-lg hover:shadow-xl hover:bg-blue-700 transition-transform 
                        duration-200 hover:-translate-y-1 active:scale-95"
           >
