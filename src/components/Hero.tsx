@@ -3,7 +3,7 @@ import ScreenshotGrid from "./ScreenshotGrid";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F8FAFF] to-[#EEF3FF] p-56 pt-30">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F8FAFF] to-[#EEF3FF] py-20 px-6 md:py-32">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-20">
 
         {/* LEFT SIDE */}
