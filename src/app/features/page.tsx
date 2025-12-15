@@ -1,23 +1,25 @@
 import Image from "next/image";
+import phone from "../../../public/images/phone.png";
+
 
 const features = [
   {
     title: "Engaging Interactive Lessons",
     description:
       "Our platform makes learning fun and active. Dive into lessons that capture your attention and master new concepts with ease through videos, simulations, and hands-on activities.",
-    image: "/images/phone.png",
+    image: phone,
   },
   {
     title: "Track Your Progress with Ease",
     description:
       "Monitor your learning milestones with a clean dashboard that highlights strengths and areas for improvement.",
-    image: "/images/phone.png",
+    image: phone,
   },
   {
     title: "Quizzes Tailored Just for You",
     description:
       "Reinforce your knowledge with adaptive quizzes personalized to your learning pace and style.",
-    image: "/images/phone.png",
+   image: phone,
   },
 ];
 
