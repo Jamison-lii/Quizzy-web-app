@@ -1,23 +1,25 @@
 import Image from "next/image";
+import phone from "../../../public/images/phone.png";
+
 
 const features = [
   {
     title: "Engaging Interactive Lessons",
     description:
       "Our platform makes learning fun and active. Dive into lessons that capture your attention and master new concepts with ease through videos, simulations, and hands-on activities.",
-    image: "/images/phone.png",
+    image: phone,
   },
   {
     title: "Track Your Progress with Ease",
     description:
       "Monitor your learning milestones with a clean dashboard that highlights strengths and areas for improvement.",
-    image: "/images/phone.png",
+    image: phone,
   },
   {
     title: "Quizzes Tailored Just for You",
     description:
       "Reinforce your knowledge with adaptive quizzes personalized to your learning pace and style.",
-    image: "/images/phone.png",
+   image: phone,
   },
 ];
 
@@ -69,12 +71,12 @@ const FeaturePage = () => {
 
               {/* Decorative gradient circles */}
               <div className="absolute w-40 h-40 md:w-48 md:h-48 rounded-full 
-                bg-gradient-to-tr from-purple-400 via-blue-400 to-purple-500 
+                bg-linear-to-tr from-purple-400 via-blue-400 to-purple-500 
                 opacity-20 -z-10 top-1/2 right-4 transform -translate-y-1/2">
               </div>
 
               <div className="absolute w-28 h-28 md:w-36 md:h-36 rounded-full 
-                bg-gradient-to-tr from-blue-400 via-purple-400 to-cyan-400 
+                bg-linear-to-tr from-blue-400 via-purple-400 to-cyan-400 
                 opacity-30 -z-10 top-1/2 right-8 transform -translate-y-1/2">
               </div>
 
