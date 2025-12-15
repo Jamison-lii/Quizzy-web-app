@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
@@ -16,27 +14,11 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400","500","700"] });
   description: "Learn better",
 };
 
-
-
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: "ease-out",
-    });
-  }, []);
-
-
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} antialiased bg-background text-foreground min-h-screen flex flex-col`}>

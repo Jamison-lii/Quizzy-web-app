@@ -4,7 +4,7 @@ import home from "../../public/phone screenshots/Home.jpg";
 
 export default function ScreenshotGrid() {
   return (
-    <section className="pl-40">
+    <section>
       <div className="max-w-7xl mx-auto px-6 flex justify-center">
         
         {/* PHONE FRAME */}
