@@ -72,7 +72,7 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
       {/* Navigation */}
     
       {/* Main Content */}
@@ -130,7 +130,7 @@ export default function FAQPage() {
                   {faq.q}
                 </span>
                 <ChevronDown
-                  className={`w-6 h-6 text-gray-400 flex-shrink-0 transition-transform duration-300 ${
+                  className={`w-6 h-6 text-gray-400 shrink-0 transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
