@@ -74,32 +74,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Navigation */}
-      <nav className="bg-gray-900 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
-              <span className="text-white text-2xl font-bold">Q</span>
-            </div>
-            <span className="text-white text-2xl font-bold">Quizzy</span>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-gray-300 hover:text-white transition">Home</a>
-            <a href="/features" className="text-gray-300 hover:text-white transition">Features</a>
-            <a href="/courses" className="text-gray-300 hover:text-white transition">Courses Preview</a>
-            <a href="/how-it-works" className="text-gray-300 hover:text-white transition">How It Works</a>
-            <a href="/about" className="text-gray-300 hover:text-white transition">About Us</a>
-            <a href="/faq" className="text-gray-300 hover:text-white transition">FAQ</a>
-            <a href="/contact" className="text-gray-300 hover:text-white transition">Contact Us</a>
-          </div>
-          <button 
-            onClick={handleDownloadApp}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition"
-          >
-            Download App
-          </button>
-        </div>
-      </nav>
-
+    
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-16">
         {/* Header */}
