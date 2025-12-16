@@ -9,7 +9,7 @@ interface TrustedCardProps {
   delay?: number;
 }
 
-const TrustedCard = ({ Icon, title, description, delay=900 }: TrustedCardProps) => {
+const TrustedCard = ({ Icon, title, description, delay=600 }: TrustedCardProps) => {
   return (
     <div data-aos="fade-up"
       data-aos-delay={delay}
