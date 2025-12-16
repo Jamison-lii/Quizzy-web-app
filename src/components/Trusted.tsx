@@ -2,7 +2,11 @@ import React from "react";
 import TrustedCard from "./TrustedCard";
 import { BookOpen, BarChart3, Target } from "lucide-react";
 
-const Trusted = (delay=600) => {
+interface TrustedProps {
+  delay?: number;
+}
+
+const Trusted = ({delay=600}:TrustedProps) => {
   return (
     <section data-aos="fade-up"
       data-aos-delay={delay}
