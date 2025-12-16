@@ -26,7 +26,7 @@ const ActionScreens = () => {
         "
       >
         {[1, 2, 3, 4, 5].map((_, index) => (
-          <div key={index} className="flex-shrink-0">
+          <div key={index} className="shrink-0">
             <ScreenshotGrid
               image={home}
               width="w-[220px] sm:w-[250px]"
