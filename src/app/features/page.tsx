@@ -1,40 +1,25 @@
 import Image from "next/image";
-<<<<<<< HEAD
 import phone from "../../../public/images/phone.png";
 
-=======
->>>>>>> a99e94b1074ae636cf04926b91b85afe3d16eaec
 
 const features = [
   {
     title: "Engaging Interactive Lessons",
     description:
       "Our platform makes learning fun and active. Dive into lessons that capture your attention and master new concepts with ease through videos, simulations, and hands-on activities.",
-<<<<<<< HEAD
     image: phone,
-=======
-    image: "/images/phone.png",
->>>>>>> a99e94b1074ae636cf04926b91b85afe3d16eaec
   },
   {
     title: "Track Your Progress with Ease",
     description:
       "Monitor your learning milestones with a clean dashboard that highlights strengths and areas for improvement.",
-<<<<<<< HEAD
     image: phone,
-=======
-    image: "/images/phone.png",
->>>>>>> a99e94b1074ae636cf04926b91b85afe3d16eaec
   },
   {
     title: "Quizzes Tailored Just for You",
     description:
       "Reinforce your knowledge with adaptive quizzes personalized to your learning pace and style.",
-<<<<<<< HEAD
    image: phone,
-=======
-    image: "/images/phone.png",
->>>>>>> a99e94b1074ae636cf04926b91b85afe3d16eaec
   },
 ];
 
@@ -86,20 +71,12 @@ const FeaturePage = () => {
 
               {/* Decorative gradient circles */}
               <div className="absolute w-40 h-40 md:w-48 md:h-48 rounded-full 
-<<<<<<< HEAD
                 bg-linear-to-tr from-purple-400 via-blue-400 to-purple-500 
-=======
-                bg-gradient-to-tr from-purple-400 via-blue-400 to-purple-500 
->>>>>>> a99e94b1074ae636cf04926b91b85afe3d16eaec
                 opacity-20 -z-10 top-1/2 right-4 transform -translate-y-1/2">
               </div>
 
               <div className="absolute w-28 h-28 md:w-36 md:h-36 rounded-full 
-<<<<<<< HEAD
                 bg-linear-to-tr from-blue-400 via-purple-400 to-cyan-400 
-=======
-                bg-gradient-to-tr from-blue-400 via-purple-400 to-cyan-400 
->>>>>>> a99e94b1074ae636cf04926b91b85afe3d16eaec
                 opacity-30 -z-10 top-1/2 right-8 transform -translate-y-1/2">
               </div>
 
