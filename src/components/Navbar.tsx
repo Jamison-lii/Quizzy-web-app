@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -23,7 +24,9 @@ const Navbar = () => {
       <nav className="sticky top-0 bg-white flex justify-between items-center z-50 h-20 px-6 shadow-md font-poppins">
         
         {/* LEFT – LOGO */}
-        <div className="font-black text-2xl">Quizzy</div>
+        <div className="font-black text-2xl">
+          <Link href="/">Quizzy</Link>
+        </div>
 
         {/* MIDDLE – NAV LINKS (DESKTOP) */}
         <ul className="hidden lg:flex space-x-12 text-[20px]">
@@ -56,8 +59,9 @@ const Navbar = () => {
         <button
           className="lg:hidden text-3xl"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
-          ☰
+          ☰ {/* Added icon for the button */}
         </button>
       </nav>
 
