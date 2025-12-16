@@ -2,9 +2,11 @@ import React from "react";
 import TrustedCard from "./TrustedCard";
 import { BookOpen, BarChart3, Target } from "lucide-react";
 
-const Trusted = () => {
+const Trusted = (delay=600) => {
   return (
-    <section className="px-6 py-24 bg-gray-50">
+    <section data-aos="fade-up"
+      data-aos-delay={delay}
+      data-aos-duration="700" className="px-6 py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
 
         {/* Heading */}

@@ -3,8 +3,9 @@ import home from "../../public/phone screenshots/Home.jpg";
 import ScreenshotGrid from "./ScreenshotGrid";
 
 const ActionScreens = () => {
+    const delay = 700;
   return (
-    <section className="flex flex-col items-center text-center px-6 py-10">
+    <section data-aos='fade-up' className="flex flex-col items-center text-center px-6 py-10">
       <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-gray-900 mb-4 font-poppins">
         See the App in Action
       </h1>
@@ -31,6 +32,7 @@ const ActionScreens = () => {
               image={home}
               width="w-[220px] sm:w-[250px]"
               height="h-[480px]"
+              delay = {delay + 100}
             />
           </div>
         ))}

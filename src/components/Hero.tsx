@@ -15,7 +15,7 @@ const Hero = () => {
           {/* Glow */}
           <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-blue-400/20 blur-3xl rounded-full -z-10 top-10" />
 
-          <div className="animate-floating">
+          <div data-aos='fade-up' className="animate-floating">
             <ScreenshotGrid
               image={home}
               width="w-[220px] sm:w-[260px] md:w-[300px]"

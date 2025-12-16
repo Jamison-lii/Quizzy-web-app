@@ -6,11 +6,14 @@ interface TrustedCardProps {
   Icon: LucideIcon;
   title: string;
   description: string;
+  delay?: number;
 }
 
-const TrustedCard = ({ Icon, title, description }: TrustedCardProps) => {
+const TrustedCard = ({ Icon, title, description, delay=900 }: TrustedCardProps) => {
   return (
-    <div
+    <div data-aos="fade-up"
+      data-aos-delay={delay}
+      data-aos-duration="700"
       className="group w-full max-w-sm p-6 bg-white rounded-2xl border border-gray-100
                  shadow-md hover:shadow-xl transition-all duration-300
                  hover:-translate-y-1"

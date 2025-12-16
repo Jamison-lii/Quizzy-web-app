@@ -7,16 +7,20 @@ interface ScreenshotGridProps {
   image: StaticImport;
   width?: string;   // tailwind width classes
   height?: string;  // tailwind height classes
+  delay?: number;   // animation delay in ms
 }
 
 
 export default function ScreenshotGrid({ image,
   width = "w-[280px] sm:w-[320px] md:w-[360px]",
   height = "h-[700px]",
+  delay = 0
 }: ScreenshotGridProps) {
   return (
      <section>
-      <div className="flex justify-center">
+      <div data-aos="fade-up"
+      data-aos-delay={delay}
+      data-aos-duration="700" className="flex justify-center">
         
         {/* PHONE FRAME */}
         <div

@@ -13,7 +13,7 @@ const CallToAction = () => {
 
           {/* White rectangle / button */}
           <div className="w-56 h-16 bg-white rounded-full shadow-lg flex justify-center items-center">
-            <span className="text-gray-800 font-semibold">Get Started</span>
+            <span className="text-gray-800 font-semibold">Download Now</span>
           </div>
 
         </div>
