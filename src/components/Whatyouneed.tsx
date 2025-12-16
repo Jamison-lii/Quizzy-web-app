@@ -1,24 +1,60 @@
-import React from 'react'
-import NeedCard from './NeedCard'
+import React from "react";
+import NeedCard from "./NeedCard";
+import { BookOpen, Sparkles, BarChart3 } from "lucide-react";
 
 const Whatyouneed = () => {
   return (
-    <div data-aos="fade-up" className=' flex flex-col m-16 p-16 rounded-xl justify-center bg-[#9396FF] items-center'>
-    <div className='flex flex-col justify-center items-center text-center'>
-      <h1 className='text-6xl font-bold leading-tight tracking-tight text-gray-900 mb-6 font-poppins'>
-      Everything You Need to Succeed
-      </h1>
-      <h1  className= ' flex text-md max-w-2xl text-center '>Our app is packed with many features designed to make learning effective, personalised and fun</h1>
-    </div>
+    <section
+      className="relative bg-[#9396FF] py-24 px-6 md:px-12 overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
 
-     <div className='pt-16 flex gap-14'>
-      <NeedCard/>
-      <NeedCard/>
-      <NeedCard/>
-    </div>
+        {/* HEADER */}
+        <h2
+          data-aos="fade-up"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight
+                     text-gray-900 mb-6 font-poppins"
+        >
+          Everything You Need to Succeed
+        </h2>
 
-    </div>
-  )
-}
+        <p
+          data-aos="fade-up"
+          data-aos-delay="100"
+          className="text-base sm:text-lg max-w-2xl text-gray-800 mb-16"
+        >
+          Our app is packed with powerful features designed to make learning
+          effective, personalized, and fun.
+        </p>
 
-export default Whatyouneed 
+        {/* CARDS */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full place-items-center"
+        >
+          <NeedCard
+            Icon={BookOpen}
+            title="Interactive Lessons"
+            description="Engage with hands-on lessons and quizzes that make learning enjoyable and effective."
+            delay={0}
+          />
+
+          <NeedCard
+            Icon={Sparkles}
+            title="Smart Learning Experience"
+            description="Personalized content adapts to your pace and learning style automatically."
+            delay={100}
+          />
+
+          <NeedCard
+            Icon={BarChart3}
+            title="Progress Tracking"
+            description="Track your growth with clear insights and performance analytics."
+            delay={200}
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Whatyouneed;
