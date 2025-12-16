@@ -17,7 +17,7 @@ export default function LearningJourneyPage() {
 
       {/* Subheading */}
       <p
-        className="mt-[8px] text-center text-black"
+        className="mt-2 text-center text-black"
         style={{
           width: "621px",
           fontSize: "16px",
