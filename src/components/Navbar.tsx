@@ -39,8 +39,8 @@ const Navbar = () => {
                   href={item.href}
                   className={`transition ${
                     isActive
-                      ? "text-[#5156FF] font-semibold"
-                      : "text-[#5F5F5F] hover:text-[#5156FF]"
+                      ? "text-blue-600 font-semibold"
+                      : "text-[#5F5F5F] hover:text-blue-600"
                   }`}
                 >
                   {item.label}
@@ -51,7 +51,7 @@ const Navbar = () => {
         </ul>
 
         {/* RIGHT – BUTTON (DESKTOP) */}
-        <div className="hidden lg:flex h-10 px-5 bg-[#5156FF] text-white items-center justify-center rounded-md hover:bg-blue-700 transition cursor-pointer">
+        <div className="hidden lg:flex h-10 px-5 bg-blue-600 text-white items-center justify-center rounded-md hover:bg-blue-700 transition cursor-pointer">
           Download
         </div>
 
@@ -78,8 +78,8 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block pb-3 border-b transition ${
                   isActive
-                    ? "text-[#5156FF] font-semibold"
-                    : "text-[#5F5F5F] hover:text-[#5156FF]"
+                    ? "text-blue-600 font-semibold"
+                    : "text-[#5F5F5F] hover:text-blue-600"
                 }`}
               >
                 {item.label}
@@ -87,7 +87,7 @@ const Navbar = () => {
             );
           })}
 
-          <button className="mt-4 w-full h-12 bg-[#5156FF] text-white rounded-lg font-medium hover:bg-blue-700 transition">
+          <button className="mt-4 w-full h-12 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition">
             Download
           </button>
         </div>

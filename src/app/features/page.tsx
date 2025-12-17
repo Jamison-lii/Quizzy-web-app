@@ -94,14 +94,14 @@ const FeaturePage = () => {
       </section>
 
       {/* CTA */}
-      <section className="w-full py-20 bg-blue-900 text-white text-center">
+      <section className="w-full py-20 bg-blue-600 text-white text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Ready to Start Your Learning Journey?
         </h2>
         <p className="mb-8 text-lg md:text-xl">
           Join thousands of students today and take the first step towards mastering new skills.
         </p>
-        <button className="bg-white text-blue-900 px-10 py-4 rounded-half font-semibold hover:bg-gray-200 hover:shadow-lg transition">
+        <button className="bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-gray-200 hover:shadow-lg transition">
           Download Now
         </button>
       </section>

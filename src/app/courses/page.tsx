@@ -1,72 +1,130 @@
-import Image from "next/image";
+import {
+  Network,
+  Database,
+  BarChart3,
+  Code2,
+  Cpu,
+  Layers3
+} from "lucide-react";
 
 export default function CoursesPage() {
   const subjects = [
     {
       id: 1,
-      title: "Mathematics",
-      description: "Master the fundamentals of mathematics with engaging quizzes covering algebra, geometry, calculus, and more.",
-      icon: "📐"
+      title: "System Analysis",
+      description:
+        "Learn how to analyze, design, and optimize systems through structured problem-solving and real-world scenarios.",
+      icon: Layers3,
+      color: "bg-blue-100 text-blue-600",
     },
     {
       id: 2,
-      title: "Biology",
-      description: "Explore the wonders of life sciences through interactive quizzes on cells, genetics, ecology, and human anatomy.",
-      icon: "🧬"
+      title: "Database & Design",
+      description:
+        "Master database concepts including ER diagrams, normalization, SQL, and efficient data modeling.",
+      icon: Database,
+      color: "bg-purple-100 text-purple-600",
     },
     {
       id: 3,
-      title: "Chemistry",
-      description: "Dive into the world of atoms and molecules with quizzes on organic chemistry, reactions, and periodic table.",
-      icon: "⚗️"
+      title: "Data Analysis",
+      description:
+        "Develop skills in analyzing, interpreting, and visualizing data to drive informed decisions.",
+      icon: BarChart3,
+      color: "bg-green-100 text-green-600",
     },
     {
       id: 4,
-      title: "Physics",
-      description: "Understand the laws of nature with quizzes covering mechanics, thermodynamics, electricity, and quantum physics.",
-      icon: "⚛️"
-    }
+      title: "Software Engineering",
+      description:
+        "Understand software development methodologies, best practices, testing, and project lifecycle management.",
+      icon: Code2,
+      color: "bg-indigo-100 text-indigo-600",
+    },
+    {
+      id: 5,
+      title: "Computer Networks",
+      description:
+        "Explore networking fundamentals including protocols, architectures, security, and data transmission.",
+      icon: Network,
+      color: "bg-orange-100 text-orange-600",
+    },
+    {
+      id: 6,
+      title: "Operating Systems",
+      description:
+        "Learn how operating systems manage processes, memory, storage, and hardware resources efficiently.",
+      icon: Cpu,
+      color: "bg-red-100 text-red-600",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-[#F3FBFD]">
-      {/* Main Content */}
-      <main className="px-10 md:px-16 lg:px-20 pt-20 md:pt-28 lg:pt-32 pb-20">
-        {/* Header Section */}
-        <div className="text-center mb-16 md:mb-20 lg:mb-24">
-          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-black mb-3 md:mb-4">
+      <main className="px-6 sm:px-10 md:px-16 lg:px-20 pt-20 md:pt-28 pb-20">
+
+        {/* HEADER */}
+        <div className="text-center mb-14 md:mb-20">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-black mb-4">
             Explore Your Subjects
           </h1>
-          <p className="text-base md:text-lg text-[#444444] leading-relaxed max-w-2xl mx-auto">
-            Choose from our wide range of subjects and start learning today
+          <p className="text-sm sm:text-base md:text-lg text-[#444444] max-w-2xl mx-auto">
+            Practice core computer science subjects through interactive quizzes
+            designed for deep understanding.
           </p>
         </div>
 
-        {/* Subject Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {subjects.map((subject) => (
-            <div
-              key={subject.id}
-              className="bg-white rounded-3xl shadow-[0px_4px_12px_rgba(0,0,0,0.12)] p-6 md:p-8 hover:shadow-[0px_6px_16px_rgba(0,0,0,0.15)] transition-shadow duration-300 cursor-pointer"
-            >
-              {/* Icon Circle */}
-              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#52D4E7] flex items-center justify-center mb-4 md:mb-5">
-                <span className="text-2xl md:text-3xl">{subject.icon}</span>
-              </div>
+        {/* SUBJECT GRID */}
+        <div className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          gap-6 md:gap-8
+          max-w-7xl mx-auto
+        ">
+          {subjects.map((subject) => {
+            const Icon = subject.icon;
 
-              {/* Card Content */}
-              <h3 className="text-lg md:text-xl font-semibold text-black mb-3">
-                {subject.title}
-              </h3>
-              <p className="text-sm md:text-[15px] text-[#4A4A4A] leading-relaxed">
-                {subject.description}
-              </p>
-            </div>
-          ))}
+            return (
+              <div
+                key={subject.id}
+                className="
+                  bg-white
+                  rounded-3xl
+                  p-6 sm:p-8
+                  shadow-md
+                  hover:shadow-xl
+                  transition-all duration-300
+                  hover:-translate-y-1
+                  cursor-pointer
+                "
+              >
+                {/* ICON */}
+                <div
+                  className={`
+                    w-14 h-14 sm:w-16 sm:h-16
+                    rounded-full
+                    flex items-center justify-center
+                    mb-5
+                    ${subject.color}
+                  `}
+                >
+                  <Icon size={28} />
+                </div>
+
+                {/* CONTENT */}
+                <h3 className="text-lg sm:text-xl font-semibold text-black mb-3">
+                  {subject.title}
+                </h3>
+                <p className="text-sm sm:text-[15px] text-[#4A4A4A] leading-relaxed">
+                  {subject.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </main>
-
-      
     </div>
   );
 }

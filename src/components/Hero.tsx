@@ -40,7 +40,7 @@ const Hero = () => {
           </p>
 
           <button
-            className="bg-[#5156FF] text-white px-8 py-4 rounded-xl text-base sm:text-lg font-medium
+            className="bg-blue-600 text-white px-8 py-4 rounded-xl text-base sm:text-lg font-medium
                        shadow-lg hover:shadow-xl hover:bg-blue-700 transition
                        active:scale-95"
           >

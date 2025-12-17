@@ -5,7 +5,7 @@ import { BookOpen, Sparkles, BarChart3 } from "lucide-react";
 const Whatyouneed = () => {
   return (
     <section
-      className="relative bg-[#9396FF] py-24 px-6 md:px-12 overflow-hidden"
+      className="relative bg-blue-600 py-24 px-6 md:px-12 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
 
@@ -13,7 +13,7 @@ const Whatyouneed = () => {
         <h2
           data-aos="fade-up"
           className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight
-                     text-gray-900 mb-6 font-poppins"
+                     text-white mb-6 font-poppins"
         >
           Everything You Need to Succeed
         </h2>
@@ -21,7 +21,7 @@ const Whatyouneed = () => {
         <p
           data-aos="fade-up"
           data-aos-delay="100"
-          className="text-base sm:text-lg max-w-2xl text-gray-800 mb-16"
+          className="text-base sm:text-lg max-w-2xl text-white mb-16"
         >
           Our app is packed with powerful features designed to make learning
           effective, personalized, and fun.
