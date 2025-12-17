@@ -87,7 +87,7 @@ const FeaturePage = () => {
                 {/* Phone */}
                 <div className="
                   relative
-                  w-[240px] sm:w-[280px] md:w-[300px]
+                  w-60 sm:w-[280px] md:w-[300px]
                   bg-black
                   rounded-[36px]
                   p-3

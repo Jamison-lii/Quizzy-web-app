@@ -61,7 +61,7 @@ export default function LearningJourneyPage() {
               </div>
 
               {/* CONNECTOR */}
-              <div className="hidden md:block flex-1 h-[2px] bg-blue-100 rounded-full" />
+              <div className="hidden md:block flex-1 h-0.5 bg-blue-100 rounded-full" />
             </div>
           );
         })}
