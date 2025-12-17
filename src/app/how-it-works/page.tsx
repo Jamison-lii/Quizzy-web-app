@@ -1,123 +1,88 @@
+"use client";
 
 export default function LearningJourneyPage() {
+  const steps = [
+    {
+      title: "Download the App",
+      description:
+        "Join thousands of learners on the most intuitive and engaging educational platform.",
+    },
+    {
+      title: "Set Up Your Profile",
+      description:
+        "Customize your learning preferences and goals for a personalized experience.",
+    },
+    {
+      title: "Start Learning",
+      description:
+        "Explore expertly designed courses tailored to your learning journey.",
+    },
+    {
+      title: "Track Your Progress",
+      description:
+        "Monitor growth, unlock achievements, and stay motivated as you learn.",
+    },
+  ];
+
   return (
-    <main className="min-h-screen w-full bg-[#B9BBFF] flex flex-col items-center relative overflow-hidden">
-      {/* Title */}
-      <h1
-        className="mt-[91px] text-center font-bold text-black"
-        style={{
-          width: "773px",
-          fontSize: "48px",
-          lineHeight: "120%",
-          letterSpacing: "-0.03em",
-        }}
-      >
-        Your Learning Journey
-      </h1>
-
-      {/* Subheading */}
-      <p
-        className="mt-2 text-center text-black"
-        style={{
-          width: "621px",
-          fontSize: "16px",
-          lineHeight: "120%",
-        }}
-      >
-        Follow these simple steps to begin your personalized educational
-        experience with our app.
-      </p>
-
-      <main className="min-h-screen w-full bg-[#B9BBFF] flex flex-col items-center py-24 gap-16">
-      {/* Card 1 - Top */}
-      <div className="bg-white rounded-[10px] shadow-md flex flex-col items-center gap-4 p-6 w-[350px] h-[200px]">
-        <h2 className="font-semibold text-lg text-black">Download App</h2>
-        <p className="text-center text-black w-[220px] leading-[140%] text-base">
-          Join thousands of learners on the most intuitive and engaging educational platform. Start your journey today.
+    <main className="w-full bg-[#F8FAFF] overflow-hidden">
+      {/* HEADER */}
+      <section className="pt-24 px-6 text-center max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+          Your Learning Journey
+        </h1>
+        <p className="mt-4 text-base md:text-lg text-gray-600">
+          Follow these simple steps to begin your personalized educational
+          experience with our app.
         </p>
-      </div>
+      </section>
 
-      {/* Card 2 - Bottom left */}
-      <div className="self-start ml-90 bg-white rounded-[10px] shadow-md flex flex-col items-center gap-4 p-6 w-[350px] h-[200px]">
-        <h2 className="font-semibold text-lg text-black">Your Learning Journey</h2>
-        <p className="text-center text-black w-[200px] leading-[140%] text-base">
-          Follow these simple steps to begin your personalized educational experience with our app.
-        </p>
-      </div>
+      {/* STEPS */}
+      <section className="mt-24 flex flex-col gap-16 max-w-6xl mx-auto px-6">
+        {steps.map((step, index) => {
+          const isLeft = index % 2 === 0;
 
-      {/* Card 3 - Bottom right */}
-      <div className="self-end mr-100 bg-white rounded-[10px] shadow-md flex flex-col items-center gap-4 p-6 w-[350px] h-[200px]">
-        <h2 className="font-semibold text-lg text-black">Get Started</h2>
-        <p className="text-center text-black w-[200px] leading-[140%] text-base">
-          Sign up and explore hundreds of personalized courses designed for your learning journey.
-        </p>
-      </div>
+          return (
+            <div
+              key={index}
+              data-aos={isLeft ? "fade-right" : "fade-left"}
+              className={`flex flex-col md:flex-row items-center gap-10 ${
+                !isLeft ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* CARD */}
+              <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 w-full md:w-[380px]">
+                <h3 className="font-semibold text-lg text-gray-900 mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                  {step.description}
+                </p>
+              </div>
 
-      {/* Card 4 - Bottom left */}
-      <div className="self-start ml-90 bg-white rounded-[10px] shadow-md flex flex-col items-center gap-4 p-6 w-[350px] h-[200px]">
-        <h2 className="font-semibold text-lg text-black">Explore More</h2>
-        <p className="text-center text-black w-[200px] leading-[140%] text-base">
-          Access advanced tools and track your progress across all courses to maximize learning.
-        </p>
-      </div>
-    </main>
-       <section className="relative w-full flex justify-center mt-24">
-      {/* Big Box */}
-      <div
-        className="bg-[#0308AC] rounded-[30px] flex flex-col items-center justify-center p-12"
-        style={{
-          width: "1160px",
-          height: "373px",
-        }}
-      >
-        {/* Title */}
-        <h2
-          className="text-white font-bold text-center"
-          style={{
-            fontSize: "32px", // replace with your Title Page size
-            lineHeight: "120%",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          Ready to Start Your Learning Journey?
-        </h2>
+              {/* CONNECTOR */}
+              <div className="hidden md:block flex-1 h-[2px] bg-blue-100 rounded-full" />
+            </div>
+          );
+        })}
+      </section>
 
-        {/* Subheading */}
-        <p
-          className="text-white text-center mt-4"
-          style={{
-            fontSize: "16px", // replace with your Body/Size Medium
-            lineHeight: "140%",
-          }}
-        >
-          Join thousands of students today and take the first step towards mastering new
-          skills. It's free to get started!
-        </p>
+      {/* CTA */}
+      <section className="mt-32 px-6 pb-24 flex justify-center">
+        <div className="bg-blue-600 rounded-3xl p-10 md:p-14 text-center max-w-5xl w-full shadow-xl">
+          <h2 className="text-white text-2xl md:text-3xl font-bold">
+            Ready to Start Your Learning Journey?
+          </h2>
+          <p className="text-white/90 mt-4 max-w-2xl mx-auto">
+            Join thousands of students today and take the first step toward
+            mastering new skills.
+          </p>
 
-        {/* Download Button */}
-        <div
-          className="mt-8 bg-white rounded-[45px] flex items-center justify-center cursor-pointer"
-          style={{
-            width: "394px",
-            height: "79px",
-          }}
-        >
-          <span
-            className="text-[#0308AC] font-semibold text-lg"
-            style={{
-              width: "396px",
-              height: "58px",
-              textAlign: "center",
-              lineHeight: "58px",
-            }}
-          >
+          <button className="mt-8 bg-white text-blue-600 px-10 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform">
             Download Now
-          </span>
+          </button>
         </div>
-      </div>
-    </section>
-
-
+      </section>
     </main>
   );
 }

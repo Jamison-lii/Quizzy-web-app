@@ -123,11 +123,12 @@ export default function AboutPage() {
           <p className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto font-poppins">
             Join thousands of students today and take the first step towards mastering new skills. It's free to get started!
           </p>
-          <button className="bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold 
-                           hover:bg-gray-100 transition-transform duration-200 hover:-translate-y-1 
-                           active:scale-95 font-poppins">
-            Download Now
-          </button>
+       <button
+  data-aos="fade-up"
+  className="bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 hover:shadow-lg transition-all duration-300"
+>
+  Download Now
+</button>
         </div>
       </section>
     </div>

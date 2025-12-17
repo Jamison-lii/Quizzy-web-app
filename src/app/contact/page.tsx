@@ -1,18 +1,19 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
-  FaEnvelope,
-  FaPhone,
-  FaLocationDot,
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaUser,
-  FaPen,
-  FaMessage
-} from "react-icons/fa6";
-import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  User,
+  PenLine,
+  MessageSquare,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 
 type FormData = {
   name: string;
@@ -21,272 +22,193 @@ type FormData = {
   message: string;
 };
 
-type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+type FormStatus = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
-  const [status, setStatus] = useState<FormStatus>('idle');
-  const [error, setError] = useState('');
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [error, setError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('submitting');
-    setError('');
+    setStatus("submitting");
+    setError("");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      if (!res.ok) throw new Error("Failed to send message");
 
-      if (!response.ok) {
-        throw new Error(data.message || 'Something went wrong');
-      }
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
 
-      setStatus('success');
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setStatus('idle'), 5000);
+      setTimeout(() => setStatus("idle"), 4000);
     } catch (err) {
-      setStatus('error');
-      setError(err instanceof Error ? err.message : 'Failed to send message');
-      console.error('Submission error:', err);
+      setStatus("error");
+      setError("Something went wrong. Please try again.");
     }
   };
+
   return (
-    <div className="min-h-screen bg-white text-gray-800">
-
-      {/* NAVBAR */}
-      <header className="flex items-center justify-between px-10 py-4 border-b">
-      </header>
-
-      {/* Status Messages */}
-      {status === 'success' && (
-        <div className="fixed top-4 right-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded flex items-center gap-2">
-          <FaCheckCircle />
-          <span>Message sent successfully!</span>
+    <div className="min-h-screen bg-gray-50 text-gray-800">
+      {/* STATUS */}
+      {status === "success" && (
+        <div className="fixed top-6 right-6 bg-green-50 text-green-700 px-4 py-3 rounded-lg flex gap-2 shadow">
+          <CheckCircle size={18} />
+          Message sent successfully
         </div>
       )}
 
-      {status === 'error' && (
-        <div className="fixed top-4 right-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded flex items-center gap-2">
-          <FaExclamationCircle />
-          <span>{error || 'Failed to send message. Please try again.'}</span>
+      {status === "error" && (
+        <div className="fixed top-6 right-6 bg-red-50 text-red-700 px-4 py-3 rounded-lg flex gap-2 shadow">
+          <AlertCircle size={18} />
+          {error}
         </div>
       )}
 
-      <main className="flex flex-col md:flex-row justify-between px-10 py-16 gap-12">
+      <main className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16">
         {/* LEFT */}
-        <section className="md:w-1/2">
-          <h2 className="text-3xl font-bold mb-3">Get in Touch</h2>
-          <p className="text-sm text-gray-600 mb-8">
-            For any questions, partnerships, or support requests, please reach out
-            using the information below or fill out the form.
-          </p>
+      <section>
+  <h1 className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight">
+    Get in Touch
+  </h1>
+  <p className="text-lg sm:text-xl text-gray-700 max-w-lg mb-10 leading-relaxed">
+    Questions, partnerships, or support? Reach out and we’ll get back to
+    you shortly.
+  </p>
 
-          <div className="space-y-4 text-sm">
-            <div className="flex items-center gap-3">
-              <FaEnvelope className="text-cyan-400" />
-              <span>info@landmarkmetropolitanuniversity.com</span>
-            </div>
+  <div className="space-y-5 text-base sm:text-lg">
+    <div className="flex items-center gap-3">
+      <Mail className="text-indigo-600" size={20} />
+      info@landmarkmetropolitanuniversity.com
+    </div>
 
-            <div className="flex items-center gap-3">
-              <FaPhone className="text-cyan-400" />
-              <span>+237672339570</span>
-            </div>
+    <div className="flex items-center gap-3">
+      <Phone className="text-indigo-600" size={20} />
+      +237 672 339 570
+    </div>
 
-            <div className="flex items-center gap-3">
-              <FaLocationDot className="text-cyan-400" />
-              <span>Malingo street, Molyko Buea</span>
-            </div>
-          </div>
+    <div className="flex items-center gap-3">
+      <MapPin className="text-indigo-600" size={20} />
+      Malingo Street, Molyko Buea
+    </div>
+  </div>
 
-          <h3 className="mt-8 mb-3 font-semibold">Follow Us</h3>
-          <div className="flex gap-4">
-            <a href="#" className="social-icon"><FaFacebookF /></a>
-            <a href="#" className="social-icon"><FaTwitter /></a>
-            <a href="#" className="social-icon"><FaInstagram /></a>
-          </div>
-        </section>
+  <div className="flex gap-4 mt-8">
+    <SocialIcon Icon={Facebook} />
+    <SocialIcon Icon={Twitter} />
+    <SocialIcon Icon={Instagram} />
+  </div>
+</section>
+
 
         {/* RIGHT FORM */}
-        <section className="md:w-1/2 bg-indigo-300 rounded-xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="text-sm">Full Name</label>
-              <div className="relative">
-                <FaUser className="input-icon" />
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Enter your full name"
-                  className="input"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
+        <section className="bg-white rounded-2xl shadow-sm p-8">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <Input
+              label="Full Name"
+              icon={User}
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
 
-            {/* Email */}
-            <div>
-              <label htmlFor="email" className="text-sm">Email</label>
-              <div className="relative">
-                <FaEnvelope className="input-icon" />
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  className="input"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
+            <Input
+              label="Email"
+              icon={Mail}
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
 
-            {/* Subject */}
-            <div>
-              <label htmlFor="subject" className="text-sm">Subject</label>
-              <div className="relative">
-                <FaPen className="input-icon" />
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  placeholder="Subject"
-                  className="input"
-                  value={formData.subject}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
+            <Input
+              label="Subject"
+              icon={PenLine}
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+            />
 
-            {/* Message */}
-            <div>
-              <label htmlFor="message" className="text-sm">Message</label>
-              <div className="relative">
-                <FaMessage className="textarea-icon" />
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Type your message"
-                  className="textarea"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-            </div>
+            <Textarea
+              label="Message"
+              icon={MessageSquare}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
 
             <button
-              type="submit"
-              disabled={status === 'submitting'}
-              className={`w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 hover:-translate-y-0.5 transition ${
-                status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''
-              }`}
+              disabled={status === "submitting"}
+              className="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition disabled:opacity-60"
             >
-              {status === 'submitting' ? 'Sending...' : 'Send Message'}
+              {status === "submitting" ? "Sending..." : "Send Message"}
             </button>
-
           </form>
         </section>
-
       </main>
+    </div>
+  );
+}
 
-      {/* FOOTER */}
-      <footer className="flex justify-between px-10 py-4 border-t text-xs text-gray-600">
-        <p>©2025, QUIZZY. All rights reserved</p>
-        <div className="space-x-4">
-          <a href="#" className="hover:text-indigo-600">Terms of Service</a>
-          <a href="#" className="hover:text-indigo-600">Privacy Policy</a>
-        </div>
-      </footer>
+/* ---------- SMALL COMPONENTS ---------- */
 
-      {/* TAILWIND UTILITIES */}
-      <style>
-        {`
-          .input {
-            width: 100%;
-            padding: 0.5rem 0.75rem 0.5rem 2.5rem;
-            border-radius: 0.375rem;
-            outline: none;
-          }
+function Input({ label, icon: Icon, ...props }: any) {
+  return (
+    <div>
+      <label className="text-sm font-medium">{label}</label>
+      <div className="relative mt-1">
+        <Icon
+          size={18}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-indigo-600"
+        />
+        <input
+          {...props}
+          className="w-full pl-10 pr-3 py-2 rounded-lg bg-gray-50 focus:bg-white focus:ring-2 focus:ring-indigo-400 outline-none"
+        />
+      </div>
+    </div>
+  );
+}
 
-          .input:focus {
-            box-shadow: 0 0 0 2px rgba(99,102,241,0.4);
-          }
+function Textarea({ label, icon: Icon, ...props }: any) {
+  return (
+    <div>
+      <label className="text-sm font-medium">{label}</label>
+      <div className="relative mt-1">
+        <Icon size={18} className="absolute left-3 top-3 text-indigo-600" />
+        <textarea
+          {...props}
+          className="w-full pl-10 pr-3 py-2 h-28 rounded-lg bg-gray-50 focus:bg-white focus:ring-2 focus:ring-indigo-400 outline-none resize-none"
+        />
+      </div>
+    </div>
+  );
+}
 
-          .textarea {
-            width: 100%;
-            height: 100px;
-            padding: 0.5rem 0.75rem 0.5rem 2.5rem;
-            border-radius: 0.375rem;
-            outline: none;
-            resize: none;
-          }
-
-          .textarea:focus {
-            box-shadow: 0 0 0 2px rgba(99,102,241,0.4);
-          }
-
-          .input-icon {
-            position: absolute;
-            top: 50%;
-            left: 0.75rem;
-            transform: translateY(-50%);
-            color: #4f46e5;
-          }
-
-          .textarea-icon {
-            position: absolute;
-            top: 0.75rem;
-            left: 0.75rem;
-            color: #4f46e5;
-          }
-
-          .social-icon {
-            font-size: 1.1rem;
-            color: #22d3ee;
-            cursor: pointer;
-            transition: transform 0.2s, color 0.2s;
-          }
-
-          .social-icon:hover {
-            color: #4f46e5;
-            transform: scale(1.2);
-          }
-        `}
-      </style>
-
+function SocialIcon({ Icon }: any) {
+  return (
+    <div className="p-2 rounded-full bg-gray-100 hover:bg-indigo-100 transition cursor-pointer">
+      <Icon size={18} className="text-indigo-600" />
     </div>
   );
 }

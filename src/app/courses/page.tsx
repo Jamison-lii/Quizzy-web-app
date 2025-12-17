@@ -64,7 +64,10 @@ export default function CoursesPage() {
       <main className="px-6 sm:px-10 md:px-16 lg:px-20 pt-20 md:pt-28 pb-20">
 
         {/* HEADER */}
-        <div className="text-center mb-14 md:mb-20">
+        <div
+          className="text-center mb-14 md:mb-20"
+          data-aos="fade-up"
+        >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-black mb-4">
             Explore Your Subjects
           </h1>
@@ -75,20 +78,24 @@ export default function CoursesPage() {
         </div>
 
         {/* SUBJECT GRID */}
-        <div className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          lg:grid-cols-3
-          gap-6 md:gap-8
-          max-w-7xl mx-auto
-        ">
-          {subjects.map((subject) => {
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-6 md:gap-8
+            max-w-7xl mx-auto
+          "
+        >
+          {subjects.map((subject, index) => {
             const Icon = subject.icon;
 
             return (
               <div
                 key={subject.id}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className="
                   bg-white
                   rounded-3xl

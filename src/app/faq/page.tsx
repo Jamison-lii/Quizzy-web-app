@@ -101,18 +101,8 @@ export default function FAQPage() {
           >
             Download For iOS
           </button>
-          <button 
-            onClick={handleDownloadiOS}
-            className="bg-gray-400 hover:bg-gray-500 text-white px-6 py-3 rounded-lg font-medium transition"
-          >
-            Download For iOS
-          </button>
-          <button 
-            onClick={handleDownloadiOS}
-            className="bg-gray-400 hover:bg-gray-500 text-white px-6 py-3 rounded-lg font-medium transition"
-          >
-            Download For iOS
-          </button>
+        
+         
         </div>
 
         {/* FAQ Items */}
